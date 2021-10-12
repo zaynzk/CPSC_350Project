@@ -1,0 +1,12 @@
+Endpoint: cpsc351-team-bix.cts3aus7w8gz.us-east-1.rds.amazonaws.com
+Username: zkhurshid
+password: team6ix9
+
+how to connect using  mysql workbench
+
+Step1: Launch  mysql workbench
+Step2: Click on the + sign next to the words,  mysql conections
+Step3: in the new window that has just popped up type the endpoint into hostname
+Step4: type username and password into their respective positions
+Step5: Click test conection to make sure that this works, if it doesnt, make sure to double check the spelling
+Step6: Connect to the instance

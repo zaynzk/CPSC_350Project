@@ -1,0 +1,69 @@
+CREATE TABLE `sys`.`Buisness` (
+  `busnID` INT NOT NULL AUTO_INCREMENT,
+  `BusnName` VARCHAR(45) NOT NULL,
+  `BusnPhone` VARCHAR(45) NULL,
+  `BusnAddress` VARCHAR(45) NULL,
+  `ContactName` VARCHAR(45) NOT NULL,
+  `BeenApproved` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`busnID`));
+
+CREATE TABLE `sys`.`Presenter` (
+  `userName` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `FirstName` VARCHAR(45) NULL,
+  `LastName` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `busnID` INT(11) NOT NULL,
+  `jobTitle` VARCHAR(45) NULL,
+  `cnuAlum` TINYINT NULL,
+  `alumniYear` VARCHAR(45) NULL,
+  `alumniMajor` VARCHAR(45) NULL,
+  PRIMARY KEY (`userName`),
+  INDEX `busnID_idx` (`busnID` ASC),
+  CONSTRAINT `busnID`
+    FOREIGN KEY (`busnID`)
+    REFERENCES `sys`.`Buisness` (`busnID`)
+    ON DELETE NO ACTION
+    ON UPDATE RESTRICT);
+
+CREATE TABLE `sys`.`PresentationBy` (
+  `Presenter_userName` VARCHAR(45) NOT NULL,
+  `Presentation_presentID` INT(11) NOT NULL,
+  PRIMARY KEY (`Presenter_userName`, `Presentation_presentID`),
+  INDEX `Presentation_idx` (`Presentation_presentID` ASC),
+  CONSTRAINT `Presenter`
+    FOREIGN KEY (`Presenter_userName`)
+    REFERENCES `sys`.`Presenter` (`userName`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `Presentation`
+    FOREIGN KEY (`Presentation_presentID`)
+    REFERENCES `sys`.`Presentation` (`presentID`)
+    ON DELETE RESTRICT
+    ON UPDATE NO ACTION);
+
+CREATE TABLE `sys`.`Student` (
+  `studID` VARCHAR(45) NOT NULL,
+  `firstName` VARCHAR(45) NULL,
+  `lastName` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `year` VARCHAR(45) NULL,
+  `major` VARCHAR(45) NULL,
+  PRIMARY KEY (`studID`));
+
+CREATE TABLE `sys`.`Attendence` (
+  `Student_studID` VARCHAR(45) NOT NULL,
+  `Presentation_presentID` INT(11) NOT NULL,
+  PRIMARY KEY (`Student_studID`, `Presentation_presentID`),
+  INDEX `Presentation_PresentID_idx` (`Presentation_presentID` ASC),
+  CONSTRAINT `Student`
+    FOREIGN KEY (`Student_studID`)
+    REFERENCES `sys`.`Student` (`studID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `Presentation_PresentID`
+    FOREIGN KEY (`Presentation_presentID`)
+    REFERENCES `sys`.`Presentation` (`presentID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);

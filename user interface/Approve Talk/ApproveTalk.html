@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">	
+		<div class="jumbotron text-center bg-primary text-white".bg-primary">
+			<h1>Approve A Talk</h1>
+			<br>
+		</div>
+	</head>
+	<body>
+	<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <button class="btn btn-outline-primary" type="button">Home</button>
+	<button class="btn btn-outline-primary" type="button">Approvals</button>
+	<button class="btn btn-outline-danger" type="button">Back</button>
+  </form>
+</nav>
+<form>
+	<div class="form-group row">
+		<label for="name" class="col-3 col-form-label text">&nbsp; Presenter Name</label>
+		<div class="col-3">
+			<input type="text-justify" class="form-control form-control-sm" id="presname" placeholder= "Jeff Bezos">
+		</div>
+	</div>
+  
+  <div class="form-group row">
+	<label for="email" class="col-3 col-form-label text">&nbsp; Presenter Email</label>
+		<div class="col-3">
+			<input type="text-justify" class="form-control form-control-sm" id="email" placeholder = "jBeszos@amazon.com">
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label for="phone" class="col-3 col-form-label text">&nbsp; Presenter Phone Number</label>
+		<div class="col-3">
+			<input type="text-justify" class="form-control form-control-sm" id="tel" placeholder = "111-111-1111">
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label for="exampleFormControlTextarea1" class="col-3 col-form-label text"> &nbsp; Promotional Blurb</label>
+		<div class ="col-3">
+			&nbsp; <textarea class="form-control" id="exampleFormControl" placeholder = "Amazon can provide a multitude of information regarding the upcioming technologies in cloud computing. We would love to come speak at CNU." rows="4" size = 5 style="width:550px"></textarea>
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label for="name" class="col-3 col-form-label text">&nbsp; Additional URLs</label>
+		<div class="col-3">
+			<input type="text-justify" class="form-control form-control-sm" id="url" placeholder= "amazon.com/careers">
+		</div>
+	</div>
+	
+	<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+  <label class="form-check-label" for="defaultCheck5">Approve </label>
+  </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+  <label class="form-check-label" for="defaultCheck5">Deny</label></div>
+	<br><br><div>
+		<input class="btn btn-primary" type="submit" value="Submit">
+		<input class="btn btn-primary" type="reset" value="Restart">
+		<input class="btn btn-primary" type="reset" value="Cancel">
+	</div>
+</form>
+</body>
+</html>

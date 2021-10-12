@@ -1,0 +1,31 @@
+What operating system was chosen: Ubuntu
+
+Public DNS (IPv4): ec2-3-95-134-113.compute-1.amazonaws.com
+
+
+IPv4 Public IP: 3.95.134.113
+
+Step-by-step instructions for connecting to this instance via ssh for both mac and PC:
+
+Mac:
+
+Step 1: Open Terminal
+Step 2: cd into the folder where the .pem file is located
+Step 3: Change permision on the key file (chmod 500 .pem)
+Step 4: ssh ubuntu@ (IP ADDRESS) -i .pem
+Step 5: type yes to connect too
+Step 6: the command line should now start with ubuntu@(IP ADDRESS)
+
+
+
+
+PC:
+
+Step 1: Download and Install Putty
+Step 2: Convert Key to .ppk through the program PuTTYGen (Make sure to save it as a private key)
+Step 3: Open putty SSH Client
+Step 4: Entire IP Address for the EC2 Server into Host Name Field 
+Step 5:  Select Connection then SSH then Auth then private key for authorization then the .ppk file you created
+Step 6: Select sessions and create a name for the session
+Step 7: open your PuTTY client
+Step 8: click open and use the username ubuntu (line should start with ubuntu@)
